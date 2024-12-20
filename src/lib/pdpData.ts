@@ -56,6 +56,7 @@ export type Amenity = {
   };
 
 export async function getPDPData(slug: string) {
+    console.log('slug', slug)
   return {
     hero: {
       images: [

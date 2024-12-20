@@ -10,7 +10,7 @@ type PDPImagesProps = {
 }
 
 const PDPImages = ({ images }: PDPImagesProps) => {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { 
       loop: true,
       align: 'start',

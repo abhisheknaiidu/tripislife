@@ -1,10 +1,15 @@
+import { StaticImageData } from "next/image";
 import { SurfPromo } from "./SurfPromo";
 
 type TestimonialProps = {
   quote: string;
   author: string;
   role: string;
-  surfPromo: any;
+  surfPromo: {
+    image: StaticImageData;
+    title: string;
+    ctaText: string;
+  };
 };
 
 export function Testimonial({ quote, author, role, surfPromo }: TestimonialProps) {
@@ -16,7 +21,7 @@ export function Testimonial({ quote, author, role, surfPromo }: TestimonialProps
       <SurfPromo {...surfPromo} />
       <div className="max-w-4xl mx-auto text-center">
         <blockquote className="text-[#294023] text-[48px] leading-tight mb-8">
-          "{quote}"
+        &quot;{quote}&quot;
         </blockquote>
         <div className="text-[#294023]">
           <p className="text-xl font-medium">{author}</p>

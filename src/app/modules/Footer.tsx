@@ -1,15 +1,5 @@
 import Link from 'next/link';
 
-const links = [
-  { title: 'FAQ', href: '/faq' },
-  { title: 'ABOUT', href: '/about' },
-  { title: 'PRIVACY POLICY', href: '/privacy' },
-  { title: 'TERMS & CONDITIONS', href: '/terms' },
-  { title: 'LICENSES', href: '/licenses' },
-  { title: 'VOLUNTEERING', href: '/volunteering' },
-  { title: 'CONTACT', href: '/contact' },
-];
-
 type FooterLink = {
   title: string;
   href: string;

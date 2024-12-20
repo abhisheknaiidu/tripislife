@@ -1,6 +1,5 @@
 import { Hero } from '@/components/Hero';
 import { Properties } from '@/components/Properties';
-import { CallToAction } from '@/components/CallToAction';
 import { Testimonial } from '@/components/Testimonial';
 import { Magazine } from '@/components/Magazine';
 import { getMockData } from '@/lib/getData';

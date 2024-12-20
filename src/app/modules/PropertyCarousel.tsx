@@ -2,11 +2,10 @@
 
 import Image from 'next/image';
 import useEmblaCarousel from 'embla-carousel-react';
-import { useCallback, useEffect } from 'react';
 import Autoplay from 'embla-carousel-autoplay'
 import { StaticImageData } from 'next/image';
 export function PropertyCarousel({ images }: { images: StaticImageData[] }) {
-  const [emblaRef, emblaApi] = useEmblaCarousel(
+  const [emblaRef] = useEmblaCarousel(
     { loop: true }, 
     [Autoplay({ delay: 2000, stopOnInteraction: false })]
   );

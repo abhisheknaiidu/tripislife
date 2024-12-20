@@ -18,11 +18,6 @@ const areaFont = localFont({
   variable: "--font-area",
 });
 
-const areaExtendted = localFont({
-  src: "./fonts/Area/Area-RegularExtended.otf",
-  variable: "--font-area-extended",
-});
-
 const anton = Anton({
   weight: '400',
   subsets: ['latin'],

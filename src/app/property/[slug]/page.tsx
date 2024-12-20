@@ -1,5 +1,3 @@
-import { Nav } from '@/components/Nav';
-import { PropertyCarousel } from '@/app/modules/PropertyCarousel';
 import PDPHero from '@/app/modules/PDPHero';
 import { getPDPData, PDPData } from '@/lib/pdpData';
 import { PDPPropertyDetails } from '@/app/modules/PDPPropertyDetails';

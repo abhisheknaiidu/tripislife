@@ -3,11 +3,9 @@ import { Nav } from '@/components/Nav';
 
 type HeroProps = {
   image: StaticImageData;
-  title: string;
-  subtitle: string;
 };
 
-export function Hero({ image, title, subtitle }: HeroProps) {
+export function Hero({ image }: HeroProps) {
   return (
     <section className="relative h-screen">
       <Nav />

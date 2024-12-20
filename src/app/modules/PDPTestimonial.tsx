@@ -1,8 +1,6 @@
 'use client'
 
 import useEmblaCarousel from 'embla-carousel-react'
-import Autoplay from 'embla-carousel-autoplay'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
 import { useCallback } from 'react'
 
 type Testimonial = {
@@ -41,7 +39,7 @@ const PDPTestimonial = ({ testimonials }: { testimonials: Testimonial[] }) => {
               <div key={index} className="flex-[0_0_100%] min-w-0">
                 <div className="max-w-4xl mx-auto text-center">
                   <blockquote className="text-[#294023] text-[48px] font-anth leading-tight mb-8">
-                    "{testimonial.quote}"
+                   {`"${testimonial.quote}"`}
                   </blockquote>
                   <div className="text-[#294023]">
                     <p className="text-xl font-semibold font-area">{testimonial.author}</p>
