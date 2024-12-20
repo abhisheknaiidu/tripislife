@@ -8,6 +8,14 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        area: ["var(--font-area)", "sans-serif"],
+        anton: ["var(--font-anton)", "sans-serif"],
+        als: ["var(--font-als)", "sans-serif"],
+        anth: ["var(--font-anth)", "sans-serif"],
+        circular: ["var(--font-circular)", "sans-serif"],
+        areaExtended: ["var(--font-area-extended)", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
