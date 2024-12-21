@@ -59,7 +59,7 @@ export function Properties({ items }: { items: Property[] }) {
           {items.map((property) => (
             <div className="flex-[0_0_calc(33.333%-1rem)]" key={property.slug}>
               <Link
-                href={`/properties/${property.slug}`}
+                href={`/property/${property.slug}`}
                 className="group relative aspect-[3/4] block overflow-hidden rounded-2xl"
               >
                 <Image
