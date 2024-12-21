@@ -1,4 +1,4 @@
-import heroImage from '@/app/assets/hero.avif';
+import heroImage from '@/app/assets/hero.jpg';
 import propertyOne from '@/app/assets/property_1.png';
 import propertyTwo from '@/app/assets/property_2.png';
 import propertyThree from '@/app/assets/property_3.png';
