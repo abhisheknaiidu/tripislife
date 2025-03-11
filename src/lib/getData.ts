@@ -26,23 +26,23 @@ export async function getMockData() {
     },
     properties: [
       {
-        title: 'Cliff',
+        title: 'Cliff Stories',
         image: propertyOne,
         slug: 'cliff',
         subtitle: 'Beachfront Villa'
       },
       {
-        title: 'Hope',
+        title: 'TRIP IS LIFE',
         image: propertyTwo,
         slug: 'hope'
       },
       {
-        title: 'Underline',
+        title: 'UNDER THE SKY',
         image: propertyThree,
         slug: 'underline'
       },
       {
-        title: 'Underline',
+        title: 'UNDER THE SKY',
         image: propertyFour,
         slug: 'underline'
       }
