@@ -21,7 +21,7 @@ export function Varkala() {
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-10 text-center bg-[#FFF6EB]">
-      <div className="text-center mb-8 sm:mb-16">
+      <div className="text-center mb-8 sm:mb-16 mt-[70px]">
         <p className="text-[36px] leading-[50px] font-mono mb-4">o</p>
         <p className="text-[36px] leading-[50px] font-mono">8.7239731649145244</p>
         <p className="text-[36px] leading-[50px] font-mono mb-8 sm:mb-16">76.71287693459008</p>
