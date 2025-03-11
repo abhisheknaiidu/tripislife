@@ -1,6 +1,8 @@
 import PropertyOne from '@/app/assets/property_1.png'
 import PropertyTwo from '@/app/assets/property_2.png'
 import PropertyThree from '@/app/assets/property_3.png'
+import Carousel1 from '@/app/assets/carousel_1.jpg'
+import Carousel2 from '@/app/assets/carousel_2.jpg'
 import testimonialPoster from '@/app/assets/testimonial_poster.png'
 import { StaticImageData } from 'next/image';
 
@@ -66,8 +68,8 @@ export async function getPDPData(slug: string) {
   return {
     hero: {
       images: [
-        PropertyOne,
-        PropertyTwo,
+        Carousel1,
+        Carousel2,
         PropertyThree,
       ],
     },
