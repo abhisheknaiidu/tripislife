@@ -49,9 +49,9 @@ export function Properties({ items }: { items: Property[] }) {
 
   return (
     <section className="max-w-7xl mx-auto py-32 px-4">
-      <div className="flex mb-[74px]">
+      <div className="flex flex-col mb-[74px] justify-center items-center">
         <h2 className="font-area text-[#294023] font-bold text-[64px]">PROPERTIES</h2>
-        <p className="text-[#294023] text-[20px] flex items-end ml-10 mb-4">BESPOKE DESIGNS AND EXPERIENCES</p>
+        <p className="text-[#294023] text-[20px] flex items-end mb-4">CONSCIOUSLY DESIGNED & HANDPICKED FOR YOU</p>
       </div>
 
       <div className="overflow-hidden" ref={emblaRef}>
@@ -69,9 +69,9 @@ export function Properties({ items }: { items: Property[] }) {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                <div className="absolute bottom-8 left-8 text-white">
-                  <h3 className="font-anth text-4xl mb-2">{property.title}</h3>
-                  <p className="text-xl font-light">{property.subtitle}</p>
+                <div className="absolute  left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 text-white text-center w-full flex justify-center">
+                  <h3 className="font-anth text-4xl sm:text-[64px] mb-2 leading-none lowercase max-w-[200px] ">{property.title}</h3>
+                  {/* <p className="text-xl font-light">{property.subtitle}</p> */}
                 </div>
               </Link>
             </div>

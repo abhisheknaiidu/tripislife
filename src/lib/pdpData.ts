@@ -2,6 +2,8 @@ import PropertyOne from '@/app/assets/property_1.png'
 import PropertyTwo from '@/app/assets/property_2.png'
 import PropertyThree from '@/app/assets/property_3.png'
 import testimonialPoster from '@/app/assets/testimonial_poster.png'
+import { StaticImageData } from 'next/image';
+
 export type Amenity = {
     icon: 'users' | 'wifi' | 'pool' | 'restaurant' | 'parking' | 'gbps';
     label: string;
@@ -14,6 +16,10 @@ export type Amenity = {
       location: string;
       description: string[];
       amenities: Amenity[];
+      amenityImages?: {
+        src: StaticImageData | string;
+        alt: string;
+      }[];
       booking: {
         checkIn: string;
         checkOut: string;
@@ -68,15 +74,20 @@ export async function getPDPData(slug: string) {
     details: {
       title: 'cliff stories',
       location: 'Varkala, Kerala, India',
-      description: ['trip is life group of properties is a hitelier based out of Varkala india and is one of the leading, trip is  a hitelier based out of Varkala india and is one of the leading', 'trip is lifut of Varkala india and is one of the leading  and is one of the leading'],
-      amenities: [
-        { icon: 'users', label: '4 guests' },
-        { icon: 'wifi', label: 'Free WiFi' },
-        { icon: 'pool', label: 'Pool' },
-        { icon: 'restaurant', label: 'Restaurant' },
-        { icon: 'parking', label: 'Parking' },
-        { icon: 'gbps', label: 'GBPS' },
+      description: [
+        'cliff stories, perched on the secluded tranquility of south cliff in varkala, is an invitation to live out your own narrative. ten thoughtfully designed rooms, each a haven of comfort and character, complete with its own living room hall and air conditioning.',
+        'start your day with a quiet dip in the infinity pool, as the first rays of the sun kisses the ocean. afternoons are for unwinding in deck chairs, soaking up the peace that envelops the space. the on-site restaurant, a cosy space of culinary delight, is always open: whether you crave a continental feast or the vibrant local flavours of varkala, our kitchen delivers with flair. as night falls, retreat to your private space, where the sound of waves crashing against the cliffs lulls you to sleep.'
       ],
+      amenities: [
+        { icon: 'pool', label: 'exclusive beach access' },
+        { icon: 'pool', label: 'hidden infinity plunge pool & jacuzzi' },
+        { icon: 'pool', label: 'sprawling private lawn' },
+        { icon: 'restaurant', label: 'gourmet dining, on call' },
+        { icon: 'pool', label: 'signature a frame cabin design' },
+        { icon: 'pool', label: 'al fresco bathroom experience' },
+        { icon: 'pool', label: 'one-of-a-kind sunset views' },
+      ],
+      amenityImages: [PropertyOne, testimonialPoster],
       booking: {
         checkIn: '2024-01-01',
         checkOut: '2024-01-02',
@@ -138,30 +149,30 @@ export async function getPDPData(slug: string) {
     },
     properties: [
         {
-          title: 'Cliff',
+          title: 'Cliff Stories',
           image: PropertyOne,
           slug: 'cliff',
           subtitle: 'Beachfront Villa'
         },
         {
-          title: 'Hope',
+          title: 'TRIP IS LIFE',
           image: PropertyTwo,
           slug: 'hope'
         },
         {
-          title: 'Underline',
+          title: 'UNDER THE SKY',
           image: PropertyThree,
           slug: 'underline'
         },
         {
-          title: 'Underline',
+          title: 'UNDER THE SKY',
           image: PropertyOne,
           slug: 'underline'
         }
       ],
       surfPromo: {
         image: testimonialPoster,
-        title: 'Surf Promo from 100',
+        title: 'surf lessons from 999/-',
         ctaText: 'KNOW MORE'
       }
   };

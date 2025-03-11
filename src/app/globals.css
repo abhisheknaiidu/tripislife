@@ -12,4 +12,15 @@ body {
   .text-balance {
     text-wrap: balance;
   }
+  
+  /* IvyPresto Display font utilities */
+  .font-ivypresto {
+    font-family: "ivypresto-display", serif;
+  }
+  
+  /* Cofo Gothic Variable font utilities */
+  .font-cofo-gothic {
+    font-family: "cofo-gothic-variable", sans-serif;
+    font-variation-settings: "wght" 400;
+  }
 }

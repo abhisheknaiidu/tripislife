@@ -7,11 +7,11 @@ type FooterLink = {
 
 export function Footer({ data }: { data: { links: FooterLink[] } }) {
   return (
-    <footer className="bg-[#FFF6EB] py-[130px] px-4 border-[#1C1D1B] border-t">
-      <div className="max-w-2xl mx-auto">
+    <footer className="bg-[#FFF6EB] py-[130px] max-w-[1260px] mx-auto px-4 border-[#1C1D1B] border-t">
+      <div className="mx-auto">
         <nav className="mb-16">
           <ul className="space-y-4">
-            {data.links.map((link) => (
+            {data?.links.map((link) => (
               <li key={link.href} className="border-b border-neutral-300">
                 <Link 
                   href={link.href}
@@ -26,7 +26,7 @@ export function Footer({ data }: { data: { links: FooterLink[] } }) {
         
   
       </div>
-      <div className="text-[#294023] text-center font-black  text-[250px] leading-[300px] px-[60px] font-circular">
+      <div className="text-[#294023] text-left font-black  text-[250px] leading-[300px] font-circular">
           trip is life
         </div>
     </footer>

@@ -15,7 +15,7 @@ const PDPFaq = ({ data }: { data: FaqProps }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <section className="min-h-screen bg-[#FFF6EB] px-10 py-32">
+    <section className="h-full bg-[#FFF6EB] px-10 pt-32">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-[#294023] text-[140px] font-anth mb-20">{data.title}</h2>
         

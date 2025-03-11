@@ -15,6 +15,12 @@ const config: Config = {
         anth: ["var(--font-anth)", "sans-serif"],
         circular: ["var(--font-circular)", "sans-serif"],
         areaExtended: ["var(--font-area-extended)", "sans-serif"],
+        "ivy-headline": ["var(--font-ivy-headline)", "serif"],
+        ivy: ["var(--font-ivy-headline)", "serif"],
+        "vvds-rashfield": ["var(--font-vvds-rashfield)", "sans-serif"],
+        "geist-sans": ["var(--font-geist-sans)", "sans-serif"],
+        "geist-mono": ["var(--font-geist-mono)", "monospace"],
+        "ivypresto": ['"ivypresto-display"', "serif"],
       },
       colors: {
         background: "var(--background)",

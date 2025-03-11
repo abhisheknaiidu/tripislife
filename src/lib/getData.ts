@@ -4,7 +4,7 @@ import propertyTwo from '@/app/assets/property_2.png';
 import propertyThree from '@/app/assets/property_3.png';
 import propertyFour from '@/app/assets/property_4.png';
 import testimonialPoster from '@/app/assets/testimonial_poster.png';
-import magazinePorsche from '@/app/assets/porche.png';
+import magazinePorsche from '@/app/assets/magazine.png';
 
 export async function getMockData() {
   return {
