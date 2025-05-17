@@ -5,8 +5,8 @@ import { Magazine } from '@/components/Magazine';
 import { getMockData } from '@/lib/getData';
 import { Varkala } from './modules/Varkala';
 import { Footer } from './modules/Footer';
-import { ReadMore } from './modules/ReadMore';
-
+import Carousel1 from '@/app/assets/carousel_1.jpg'
+import Carousel2 from '@/app/assets/carousel_2.jpg'
 // Import the WeatherSectionClient component directly
 import { WeatherSectionClient } from './modules/WeatherSectionClient';
 
@@ -19,7 +19,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Hero {...data.hero} />
+      <Hero image={[Carousel1, Carousel2]} />
       <Varkala />
       <Properties items={data.properties} />
       <WeatherSectionClient weatherData={weatherData} />
@@ -29,7 +29,7 @@ export default async function Home() {
         subtitle={data.magazine.subtitle}
         coverImage={data.magazine.coverImage}
       />
-      <ReadMore />
+      {/* <ReadMore /> */}
       <Footer data={data.footer} />
     </main>
   );

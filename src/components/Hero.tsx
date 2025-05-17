@@ -1,22 +1,18 @@
-import Image, { StaticImageData } from 'next/image';
+import { StaticImageData } from 'next/image';
 import { Nav } from '@/components/Nav';
+import { PropertyCarousel } from '@/app/modules/PropertyCarousel';
 
 type HeroProps = {
-  image: StaticImageData;
+  image: StaticImageData | StaticImageData[];
 };
 
 export function Hero({ image }: HeroProps) {
+  const images = Array.isArray(image) ? image : [image];
+  
   return (
-    <section className="relative h-screen">
+    <section className="relative h-[calc(100vh-250px)]">
       <Nav />
-      <Image
-        src={image}
-        alt="Luxury villa with pool"
-        fill
-        className="object-cover"
-        priority
-        quality={100}
-      />
+      <PropertyCarousel images={images} />
     </section>
   );
 } 

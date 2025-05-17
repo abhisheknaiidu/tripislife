@@ -79,7 +79,7 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen">
       {/* Hero Section with Surfer */}
-      <section className="relative h-screen">
+      <section className="relative h-[calc(100vh-100px)]">
       <Nav />
       <Image
         src={aboutImage}
