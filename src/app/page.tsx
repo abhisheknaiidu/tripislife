@@ -12,6 +12,7 @@ import { WeatherSectionClient } from './modules/WeatherSectionClient';
 
 // Import the getWeatherData function
 import { getWeatherData } from './modules/WeatherSection';
+import { SurfPromoProps } from '@/components/SurfPromo';
 
 export default async function Home() {
   const data = await getMockData();
@@ -23,7 +24,7 @@ export default async function Home() {
       <Varkala />
       <Properties items={data.properties} />
       <WeatherSectionClient weatherData={weatherData} />
-      <Testimonial {...data.testimonial} surfPromo={data.surfPromo} />
+      <Testimonial {...data.testimonial} surfPromo={data.surfPromo as unknown as SurfPromoProps} />
       <Magazine 
         title={data.magazine.title} 
         subtitle={data.magazine.subtitle}

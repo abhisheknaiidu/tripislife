@@ -6,7 +6,7 @@ import PDPTestimonial from '@/app/modules/PDPTestimonial';
 import PDPFaq from '@/app/modules/PDPFaq';
 import { Footer } from '@/app/modules/Footer';
 import { Properties } from '@/components/Properties';
-import { SurfPromo } from '@/components/SurfPromo';
+import { SurfPromo, SurfPromoProps } from '@/components/SurfPromo';
 import { StaticImageData } from 'next/image';
 
 
@@ -43,7 +43,7 @@ export default async function Page({
     <PDPTestimonial testimonials={data.details.testimonials} />
     <PDPFaq data={data.faq} />
     <Properties items={data.properties} />
-    <SurfPromo {...data.surfPromo} />
+    <SurfPromo {...data.surfPromo as unknown as SurfPromoProps} />
     <Footer data={data.footer} />
     </>
   );

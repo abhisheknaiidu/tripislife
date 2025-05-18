@@ -1,59 +1,118 @@
 'use client'
 
 import { useState } from 'react'
+import { motion } from 'framer-motion'
 
-type FaqProps = {
+type Question = {
+  question: string
+  answer: string
+}
+
+export type FaqProps = {
   title: string
-  questions: {
-    question: string
-    answer: string
-  }[]
   subtitle: string
+  questions: Question[]
 }
 
 const PDPFaq = ({ data }: { data: FaqProps }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
+  const toggleQuestion = (index: number) => {
+    if (openIndex === index) {
+      setOpenIndex(null)
+    } else {
+      setOpenIndex(index)
+    }
+  }
+
+  const titleAnimation = {
+    hidden: { opacity: 0, y: -40 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.8, ease: "easeOut" }
+    }
+  }
+
+  const questionAnimation = (index: number) => ({
+    hidden: { opacity: 0, y: -20 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.6, ease: "easeOut", delay: index * 0.1 }
+    }
+  })
+
+  const subtitleAnimation = {
+    hidden: { opacity: 0, y: -30 },
+    visible: { 
+      opacity: 1, 
+      y: 0,
+      transition: { duration: 0.7, ease: "easeOut" }
+    }
+  }
+
+  const answerAnimation = {
+    initial: { opacity: 0, height: 0 },
+    animate: { opacity: 1, height: "auto", transition: { duration: 0.3 } }
+  }
+
   return (
-    <section className="h-full bg-[#FFF6EB] px-10 pt-32">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-[#294023] text-[140px] font-anth mb-20">{data.title}</h2>
-        
-        <div className="space-y-4">
+    <section className="bg-[#FFF6EB] py-24">
+      <div className="max-w-4xl mx-auto px-6">
+        <motion.h2 
+          className="text-[#294023] text-5xl md:text-6xl font-medium mb-16 text-center font-anth"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: false, amount: 0.3 }}
+          variants={titleAnimation}
+        >
+          {data.title}
+        </motion.h2>
+
+        <div className="space-y-6 mb-16">
           {data.questions.map((faq, index) => (
             <div key={index} className="border-b border-[#294023]">
-              <button
-                className="w-full py-3 flex justify-between items-center text-left"
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+              <button 
+                className="w-full text-left py-4 pr-10 focus:outline-none relative"
+                onClick={() => toggleQuestion(index)}
               >
-                <span className="text-[#294023] text-[27px] font-bold font-area">{faq.question}</span>
-                <svg 
-                  className={`transition-transform ${
-                    openIndex === index ? '' : 'rotate-90'
-                  }`}
-                  width="26" 
-                  height="26" 
-                  viewBox="0 0 26 26" 
-                  fill="none" 
-                  xmlns="http://www.w3.org/2000/svg"
+                <motion.h3 
+                  className="text-[#294023] text-xl font-medium font-area"
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: false, amount: 0.5 }}
+                  variants={questionAnimation(index)}
                 >
-                  <path 
-                    d="M0.0879992 7.87366L0.663998 7.98166C0.844 6.54166 1.708 6.10966 3.436 6.79366L3.436 6.75766C9.232 8.91766 16.432 11.6897 21.364 13.7777C15.136 16.2617 8.26 18.9617 3.148 20.6897C1.564 21.0137 0.7 20.4377 0.663999 19.0697L0.0879997 19.1417C0.196001 20.5457 0.232 21.4097 0.232 22.7057C0.232 23.6417 0.159999 24.5777 0.088 25.6577L0.663999 25.7297C0.700001 24.9017 1.312 24.0377 2.788 23.2817C9.34 20.3297 17.98 16.8017 25.072 14.0657C25.036 13.7417 25 13.2377 25 12.7697C25 12.3017 25.036 11.6897 25.072 11.3657C18.448 8.95366 10.06 5.67766 3.22 2.83366C1.708 2.07766 0.879999 1.32166 0.663998 0.277656L0.0879989 0.349656C0.159998 1.17766 0.196 1.93366 0.231999 2.83366L0.231999 3.91366C0.231999 5.46166 0.196 6.57766 0.0879992 7.87366Z" 
-                    fill="black"
-                  />
-                </svg>
+                  {faq.question}
+                </motion.h3>
+                <span className="absolute right-0 top-1/2 transform -translate-y-1/2">
+                  {openIndex === index ? '−' : '+'}
+                </span>
               </button>
               {openIndex === index && (
-                <div className="pb-6">
+                <motion.div 
+                  className="pb-6"
+                  initial="initial"
+                  animate="animate"
+                  variants={answerAnimation}
+                >
                   <p className="text-[#294023] text-lg font-area">{faq.answer}</p>
-                </div>
+                </motion.div>
               )}
             </div>
           ))}
         </div>
 
         <div className="text-center mt-32">
-          <h3 className="text-[#294023] text-6xl font-medium mb-4 font-anth" dangerouslySetInnerHTML={{ __html: data.subtitle }} />
+          <motion.h3 
+            className="text-[#294023] text-6xl font-medium mb-4 font-anth" 
+            dangerouslySetInnerHTML={{ __html: data.subtitle }}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={subtitleAnimation}
+          />
         </div>
       </div>
     </section>
